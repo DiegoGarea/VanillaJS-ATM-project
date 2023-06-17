@@ -42,7 +42,14 @@ btnL0.addEventListener('click', mainMenu);
 
 // ----------------------------------------------------------------------------
 
-mainMenu();
+inicio();
+
+function inicio() {
+  textScreen.innerHTML = 'B i e n v e n i d o';
+  setTimeout(() => {
+    mainMenu();
+  }, 3000);
+}
 
 function retirarDinero(numero) {
   if (
@@ -101,22 +108,22 @@ function numTable() {
     <p id="cantidad">0</p>
     <button class="btn-enter" id="btn-enter-id" type="submit">Submit</button>
     <div class="div-btn-num">
-      <button class="btn-num" id="btn-num-1">1</button>
-      <button class="btn-num" id="btn-num-2">2</button>
-      <button class="btn-num" id="btn-num-3">3</button>
+      <button class="btn-num">1</button>
+      <button class="btn-num">2</button>
+      <button class="btn-num">3</button>
     </div>
     <div class="div-btn-num">
-      <button class="btn-num" id="btn-num-4">4</button>
-      <button class="btn-num" id="btn-num-5">5</button>
-      <button class="btn-num" id="btn-num-6">6</button>
+      <button class="btn-num">4</button>
+      <button class="btn-num">5</button>
+      <button class="btn-num">6</button>
     </div>
     <div class="div-btn-num">
-      <button class="btn-num" id="btn-num-7">7</button>
-      <button class="btn-num" id="btn-num-8">8</button>
-      <button class="btn-num" id="btn-num-9">9</button>
+      <button class="btn-num">7</button>
+      <button class="btn-num">8</button>
+      <button class="btn-num">9</button>
     </div>
     <div class="div-btn-num">
-      <button class="btn-num" id="btn-num-0">0</button>
+      <button class="btn-num">0</button>
       <button class="btn-num btn-clear" id="btn-clear">clear</button>
     </div>
   `;
