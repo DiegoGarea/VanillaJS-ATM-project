@@ -1,0 +1,159 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(56, 56, 56);
+  line-height: 2rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin: 35px 0px;
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  height: 600px;
+  width: 750px;
+  background-color: black;
+  border-radius: 15px;
+  box-shadow: -2px 0px 12px 8px rgba(0, 0, 0, 0.2);
+}
+
+.screen-left {
+  padding: 25px 0px 25px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  width: 30%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.screen-left span {
+  font-size: 9px;
+}
+
+.screen-mid {
+  font-size: 23px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.screen-right {
+  padding: 25px 10px 25px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  border-radius: 15px;
+  width: 30%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.left-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.all-buttons {
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 25px 40px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.45);
+}
+
+.hover-active:hover {
+  background-color: rgb(198, 198, 198);
+}
+
+.hover-active:active {
+  background-color: rgb(169, 169, 169);
+  box-shadow: -2px 0px 12px -200px rgba(0, 0, 0, 0.62);
+  transition: 0.5s;
+}
+
+/* cambios en innerHTML */
+
+.screen-mid p {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.screen-mid input {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-enter {
+  padding: 10px 80px;
+  color: green;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.div-btn-num {
+}
+
+.btn-num {
+  padding: 21px;
+  margin: 10px;
+}
+
+.btn-clear {
+  padding: 21px 48px;
+  color: red;
+  font-size: 16px;
+}
+
+.div-btn-yes-no {
+  padding: 15px;
+}
+
+.btn-yes {
+  background-color: green;
+  color: white;
+  padding: 10px 34px;
+}
+
+.btn-no {
+  background-color: red;
+  color: white;
+  padding: 10px 30px;
+}
