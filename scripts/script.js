@@ -1,5 +1,5 @@
 let balance = 10000;
-let maxWithdraw = 10001;
+let maxWithdraw = 6000;
 let sumMaxWithdraw = 0;
 let multWithdraw = 50;
 let credit = -400;
@@ -9,28 +9,28 @@ let errorCount = 0;
 
 const textScreen = document.getElementById('text-screen');
 
-// left bottons
+// left buttons
 const btnL1 = document.getElementById('btn-l-1');
 const btnL2 = document.getElementById('btn-l-2');
 const btnL3 = document.getElementById('btn-l-3');
 const btnL4 = document.getElementById('btn-l-4');
 const btnL5 = document.getElementById('btn-l-5');
 
-// left text bottons
+// left text buttons
 const divTextL1 = document.getElementById('text-l-1');
 const divTextL2 = document.getElementById('text-l-2');
 const divTextL3 = document.getElementById('text-l-3');
 const divTextL4 = document.getElementById('text-l-4');
 const divTextL5 = document.getElementById('text-l-5');
 
-// right bottons
+// right buttons
 const btnR6 = document.getElementById('btn-r-6');
 const btnR7 = document.getElementById('btn-r-7');
 const btnR8 = document.getElementById('btn-r-8');
 const btnR9 = document.getElementById('btn-r-9');
 const btnR0 = document.getElementById('btn-r-0');
 
-// right text bottons
+// right text buttons
 const divTextR6 = document.getElementById('text-r-6');
 const divTextR7 = document.getElementById('text-r-7');
 const divTextR8 = document.getElementById('text-r-8');
@@ -112,7 +112,7 @@ function mainMenu() {
   textScreen.innerText = '';
 }
 
-// ----------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------
 
 function cleanElements(...elements) {
   elements.forEach((element) => {
@@ -131,6 +131,9 @@ function cleanEvents() {
   btnL4.removeEventListener('click', complaints);
   btnL5.removeEventListener('click', movements);
   btnR6.removeEventListener('click', pay);
+  btnR7.removeEventListener('click', buttonError);
+  btnR8.removeEventListener('click', buttonError);
+  btnR9.removeEventListener('click', buttonError);
 }
 
 // ------------------------------------------------------------------------------------
@@ -173,7 +176,7 @@ function withdrawFounds(type, amount) {
     textScreen.innerText = 'Sin fondos';
     setTimeout(() => {
       start();
-    }, 3000);
+    }, 2500);
   }
 }
 
@@ -203,12 +206,12 @@ function donationAnnouncement(type, number, balance) {
       addTransactionHistory(type, number, balance);
       setTimeout(() => {
         start();
-      }, 3000);
+      }, 2500);
     } else {
       textScreen.innerText = 'No cuenta con fondos suficientes';
       setTimeout(() => {
         start();
-      }, 3000);
+      }, 2500);
     }
   });
   noButton.addEventListener('click', () => {
@@ -225,7 +228,8 @@ function donationAnnouncement(type, number, balance) {
 function checkBalance() {
   errorCount = 0;
   cleanEvents();
-  textScreen.innerText = `Saldo Actual:  $${balance}`;
+  textScreen.innerText = `Saldo Actual:  $${balance}
+  Tarjeta de Credito: ${credit}`;
   cleanElements(
     divTextL1,
     divTextL2,
@@ -289,7 +293,7 @@ function movements() {
       <p>Última operación:</p>
       <div>
         <p>Operación: ${ultimaOperacion.Operacion}</p>
-        <p>Cantidad: ${ultimaOperacion.amount}</p>
+        <p>Cantidad: ${ultimaOperacion.Cantidad}</p>
         <p>Cantidad restante: ${ultimaOperacion['Cantidad restante']}</p>
         <p>Fecha: ${ultimaOperacion.fecha}</p>
       </div>
@@ -302,14 +306,20 @@ function movements() {
 function savingFounds(type, amount) {
   errorCount = 0;
   const number = amount;
-
-  balance += number;
-  textScreen.innerText = `Depósito exitoso: $${number}
+  if (number % multWithdraw === 0) {
+    balance += number;
+    textScreen.innerText = `Depósito exitoso: $${number}
     Nuevo saldo: $${balance}`;
-  addTransactionHistory(type, number, balance);
-  setTimeout(() => {
-    start();
-  }, 3000);
+    addTransactionHistory(type, number, balance);
+    setTimeout(() => {
+      start();
+    }, 2500);
+  } else if (number % multWithdraw !== 0) {
+    textScreen.innerHTML = 'Ingrese múltiplos de: $50';
+    setTimeout(() => {
+      numPad('deposito');
+    }, 2500);
+  }
 }
 
 // -------------------------------------------------------------------------------------
