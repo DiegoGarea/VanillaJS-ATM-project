@@ -4,10 +4,12 @@ ATM Simulator
 
 This project is a simple ATM (Automated Teller Machine) simulator created using HTML, CSS, and JavaScript. It provides a user interface to perform basic ATM transactions such as withdrawals, deposits, checking balances, and more.
 <hr/>
-![html js css](https://github.com/DiegoGarea/VanillaJS-ATM-project/assets/124759506/3d2af9ae-998d-4b8a-94e2-e3f86bbb4bef)
+![html js css](https://github.com/DiegoGarea/VanillaJS-ATM-project/assets/124759506/b4b48fa0-accd-4615-a136-5ebdde47d53b)
+
 
 <hr/>
-![ATM](https://github.com/DiegoGarea/VanillaJS-ATM-project/assets/124759506/521ba7c8-c619-485f-9b9d-5e26d210f48a)
+![ATM](https://github.com/DiegoGarea/VanillaJS-ATM-project/assets/124759506/04c78cf7-5f88-49e7-a58b-27c19093b19d)
+
 <hr/>
 
 ## Features
